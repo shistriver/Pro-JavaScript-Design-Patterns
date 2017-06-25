@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<input type="text">
+<span></span>
+<script src="chain_responsibility.js"></script>
+<script>
+    var input = document.getElementsByTagName('input');
+    input[0].onchange = function (e) {
+        sendData({value:input[0].value}, 'validate', input[0]);
+    }
+    input[1].onkeydown = function (e) {
+        sendData({value:input[1].value}, 'sug', input[1]);
+    }
+    dealData('用户名不正确', 'validate', input[0]);
+</script>
+</body>
+</html>
